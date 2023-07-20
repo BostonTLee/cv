@@ -1,0 +1,291 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[none]{hyphenat}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Boston CV},
+    pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\setlist[itemize]{topsep=0.5\parskip, after=\vspace{0.5\baselineskip}}
+
+\setcounter{secnumdepth}{0}
+\setlist{nosep}
+
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% \newcommand{\profileheading}[6]{
+% \begin{parcolumns}[nofirstindent]{2}
+% \end{parcolumns}
+% \noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{#1} & #2 \\
+%   #3 & #4 \\
+%   #5 & #6 \\
+% \end{tabular*}
+% }
+
+\newcommand{\resumeSubheading}[5]{
+\noindent\begin{minipage}{0.5\textwidth}
+	\begin{flushleft}
+	\textbf{#1}\\
+	\textbf{#2}\\
+	\end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.5\textwidth}
+	\begin{flushright}
+	#3\\
+	#4\\
+	\end{flushright}
+\end{minipage}%
+\newline
+#5
+%\leavevmode%\\%\newline
+}
+
+\newcommand{\award}[4]{
+\begin{flushleft}
+\textbf{#1}\\
+#2 - #3\\
+#4\\
+\end{flushleft}
+\leavevmode
+}
+
+% \newcommand{\resumeSubheading}[4]{
+% \vspace{-1pt}\item[]
+% % \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r}
+% \begin{tabular*}{\textwidth}{l r}
+%       \textbf{#1} & \textbf{#2} \\
+%       \textit{#3} & \textit{#4} \\
+%     \end{tabular*}\vspace{-5pt}
+% }
+
+\newcommand{\projectListing}[3]{
+	\textbf{#1 (#2)} - #3
+}
+
+\begin{document}
+\begin{flushleft}
+\LARGE \textbf{Boston Lee} \\
+\end{flushleft}
+
+% Needed to make the table flush
+\noindent\begin{minipage}{0.5\textwidth}
+	\begin{flushleft}
+	(970) 590-8726 \\
+	boston.lee@gmail.com \\
+	\end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.5\textwidth}
+	\begin{flushright}
+	\url{https://www.bostonlee.com/} \\
+	\url{https://www.linkedin.com/in/boston-lee/} \\
+	\end{flushright}
+\end{minipage}%
+
+\section{Education}
+
+\begin{flushleft}
+\textbf{Colorado State University, Honors Program}\\
+Fort Collins, CO\\
+BS Statistics (\textit{Summa Cum Laude}), BA Philosophy (\textit{Summa Cum Laude})\\
+Cumulative GPA: 4.0
+\end{flushleft}
+
+\section{Employment}
+
+% Situation
+% Task
+% Action
+% Response
+
+\resumeSubheading{Data Engineer}{Proofpoint}{October 2022 - Present}{Remote}{
+	\begin{itemize}
+
+		\item Architected internal package to process JSON payloads to
+			machine learning inputs, using Pydantic
+
+		\item Prototyped XGBoost-based classification model for
+			classifying highly structured JSON payloads
+
+		\item Maintained statistical machine learning model in
+			production, managing model bug fixes, retraining, and
+			deployment with AWS Sagemaker and AWS S3
+
+		\item Added AWS Cloudwatch metrics to stateless classification
+			service running on AWS Lambda, leading to greatly
+			improved application visibility in diagnosing
+			performance
+
+	\end{itemize}
+}
+
+\resumeSubheading{Junior Data Engineer}{Ampt}{August 2021 - October 2022}{Fort Collins, CO}{
+\begin{itemize}
+
+	\item Managed migration from filesystem data storage to MySQL
+		database storage on intermediate data servers,
+		including overhaul of internal web service to accommodate
+		a database backend.
+		Roadmapped the develoment pipeline from initial prototyping
+		to full deployment.
+	\item Prototyped, modeled, and implemented new MySQL database schema in
+		collaboration with engineering requirements.
+		Integrated database with existing data pipeline. 
+	\item Built new ETL processes using Python, pandas, and SQLAlchemy.
+		Sped up ETL pipeline by \~500\%, preventing latency and severe
+		server downtime.
+	\item Built REST API interface to MySQL database, following
+		implementation best practices.
+	\item Prototyped schemaless data storage in MongoDB, using pymongo. 
+	\item Architected upgraded Python package for custom
+		parsing, 
+		allowing for deployment on edge devices.
+	\item Created and managed multiple OpenVPN Ubuntu Linux servers
+		hosted on cloud services.
+	\item Designed and implemented SQLite3 database to track OpenVPN metadata.
+	\item Developed command-line
+		tool in Bash for the management and automation of
+		deployment of OpenVPN server and Certificate Authority.
+\end{itemize}
+}
+
+\resumeSubheading{Data Analyst Intern}{Trinidad Benham}{March 2021 - August 2021}{Remote}{
+\begin{itemize}
+
+\item Led creation of metadata database system for tracking multiple disparate
+	databases and coordinating shared data views in a data warehouse.
+	Created the database design, scripted data insertion, and ensured
+	proper data flow into the metadata database. Coordinated database
+	design and implementation to incorporate multiple database design
+	philosophies across multiple business functions. Scripted associated
+	business logic in Python, designing code and configuration.
+
+\item Scripted views for Snowflake data warehouse in SQL. 
+
+\item Translated SSRS reports from legacy system, managing scripting, driver
+	configuration, and deployment. Used multiple SQL dialects, including:
+	PostgreSQL, MS SQL Server, Snowflake SQL.
+
+\end{itemize}
+}
+
+\resumeSubheading{Software Engineering Intern}{Ampt}{May 2020 - March 2021}{Fort Collins, CO}{
+\begin{itemize}
+
+\item Independently developed a Python package using object-oriented design to
+	integrate Pandas functionality with proprietary over-the-air (RF)
+	network protocol. The package increased the speed of data processing by
+	\~40\%. Managed development, versioning, internal documentation, and
+	deployment. 
+
+\item Developed and maintained an interactive graph dashboard for engineering
+	and client use. Integrated the page into a Flask webserver, using
+	Javascript as a frontend.
+
+\item Led initial testing of Zigbee wireless data collection, including
+	research, scripting, and visualization.
+
+\end{itemize}
+}
+
+\resumeSubheading{Teaching Assistant: Discrete Structures}{Colorado State University}{January 2020 - December 2020}{Fort Collins, CO}{
+\begin{itemize}
+
+\item Led two weekly recitations, reinforcing class material.
+	Assisted students both in recitation and online. Graded course
+	materials and exams. 
+
+\item Class topics included: Integer representations and properties,
+	propositions, predicates, sets, functions, program proofs, induction,
+	counting, complexity, and basic combinatorics.
+
+\end{itemize}
+}
+
+\resumeSubheading{Research Assistant: Microbiology}{Colorado State University}{January 2020 - December 2020}{Fort Collins, CO}{
+\begin{itemize}
+	\item Assisted with the execution of immunofluorescence and
+		transfection experiments for kinetochore protein detection.
+	\item Performed general lab support and maintained a sterile lab environment.
+\end{itemize}
+}
+
+\resumeSubheading{Martial Arts Instructor}{International Black Belt Academy}{March 2018 - August 2018}{Fort Collins, CO}{
+\begin{itemize}
+	\item Led youth camps, which involved full supervision of large
+		groups of children. Constructed martial arts-based curriculum for children of
+		all ages.
+	\item Led youth karate instruction classes
+	\item Developed curriculum for youth karate instruction at the appropriate level
+	\item Led and assisted with planning and teaching adult karate instruction classes
+	\item Led and assisted with planning and teaching adult kickboxing classes
+	\item Assisted in teaching a women's self defense course
+\end{itemize}
+}
+
+% \resumeSubheading{Test}{Test}{Test}{Test}
+
+
+\section{Projects}
+
+\section{Leadership Experience}
+
+\resumeSubheading{Financial Officer}{The 4th Paradigm (CSU Data Science Club)}{August 2018 - May 2021}{Fort Collins, CO}{
+\begin{itemize}
+	\item Served on the leadership committee, which directed club vision and goals
+	\item Planned club events, purchased refreshments and materials for club events
+	\item Solicited and secured funding from sources within and beyond the university
+	\item Managed all official financial documentation and disbursement for club events
+\end{itemize}
+}
+
+
+
+\section{Awards}
+
+\award{Maurice Davies Award}{CSU Statistics Department}{May 2022}{
+	The CSU Statistics department's most prestigious undergraduate award.
+	More information can be found here:
+	https://statistics.colostate.edu/maurice-davies-award/
+}
+
+\award{Dean's List}{CSU College of Natural Sciences}{May 2018, May 2019, May 2021, May 2022}{
+	Member of the CSU Dean's List for every academic year of enrollment.
+}
+
+\award{Robert Zoellner Philosophy Undergraduate Scholarship}{CSU Philosophy Department}{May 2020, May 2021}{
+	Awarded to a full-time or part-time undergraduate student majoring in
+	Philosophy, with good academic standing.
+}
+
+\award{Early Undergraduate Achievement Award}{CSU Statistics Department}{May 2022}{
+	This award is given to a promising student early in their academic career.
+}
+
+\award{University Honors Scholar}{CSU Statistics Department}{August 2018}{
+	Member of the Colorado State University Honors Program.
+}
+
+
+\end{document}
