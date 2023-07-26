@@ -5,6 +5,8 @@
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
@@ -20,6 +22,7 @@
     pdftitle={Boston CV},
     pdfpagemode=FullScreen,
 }
+\usepackage{ifthen}
 
 \urlstyle{same}
 
@@ -27,6 +30,7 @@
 
 \setcounter{secnumdepth}{0}
 \setlist{nosep}
+\setlength{\parindent}{0pt}
 
 \titleformat{\section}{
   \vspace{-3pt}\scshape\raggedright\large
@@ -70,6 +74,10 @@
 \leavevmode
 }
 
+\newcommand{\project}[3]{
+\textbf{#1 (#2)} --- #3
+}
+
 % \newcommand{\resumeSubheading}[4]{
 % \vspace{-1pt}\item[]
 % % \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r}
@@ -108,9 +116,16 @@
 \begin{flushleft}
 \textbf{Colorado State University, Honors Program}\\
 Fort Collins, CO\\
+August 2018 -- December 2021\\
 BS Statistics (\textit{Summa Cum Laude}), BA Philosophy (\textit{Summa Cum Laude})\\
 Cumulative GPA: 4.0
 \end{flushleft}
+
+\section{Languages and Tools}
+
+\textbf{Languages}: Python, SQL, POSIX Shell, Bash, Java, Javascript, R
+
+\textbf{Tools}: Git/GitHub/Bitbucket, AWS Services, Linux, UNIX Utilities, Snowflake
 
 \section{Employment}
 
@@ -120,72 +135,38 @@ Cumulative GPA: 4.0
 % Response
 
 \resumeSubheading{Data Engineer}{Proofpoint}{October 2022 - Present}{Remote}{
-	\begin{itemize}
-
-		\item Architected internal package to process JSON payloads to
-			machine learning inputs, using Pydantic
-
-		\item Prototyped XGBoost-based classification model for
-			classifying highly structured JSON payloads
-
-		\item Maintained statistical machine learning model in
-			production, managing model bug fixes, retraining, and
-			deployment with AWS Sagemaker and AWS S3
-
-		\item Added AWS Cloudwatch metrics to stateless classification
-			service running on AWS Lambda, leading to greatly
-			improved application visibility in diagnosing
-			performance
-
-	\end{itemize}
-}
-
-\resumeSubheading{Junior Data Engineer}{Ampt}{August 2021 - October 2022}{Fort Collins, CO}{
 \begin{itemize}
 
-	\item Managed migration from filesystem data storage to MySQL
-		database storage on intermediate data servers,
-		including overhaul of internal web service to accommodate
-		a database backend.
-		Roadmapped the develoment pipeline from initial prototyping
-		to full deployment.
-	\item Prototyped, modeled, and implemented new MySQL database schema in
-		collaboration with engineering requirements.
-		Integrated database with existing data pipeline. 
-	\item Built new ETL processes using Python, pandas, and SQLAlchemy.
-		Sped up ETL pipeline by \~500\%, preventing latency and severe
-		server downtime.
-	\item Built REST API interface to MySQL database, following
-		implementation best practices.
-	\item Prototyped schemaless data storage in MongoDB, using pymongo. 
-	\item Architected upgraded Python package for custom
-		parsing, 
-		allowing for deployment on edge devices.
-	\item Created and managed multiple OpenVPN Ubuntu Linux servers
-		hosted on cloud services.
-	\item Designed and implemented SQLite3 database to track OpenVPN metadata.
-	\item Developed command-line
-		tool in Bash for the management and automation of
-		deployment of OpenVPN server and Certificate Authority.
+	\item Architected internal package to process JSON payloads to machine learning inputs, using Pydantic
+	\item Prototyped XGBoost-based classification model for classifying highly structured JSON payloads
+	\item Maintained statistical machine learning model in production, managing model bug fixes, retraining, and deployment with AWS Sagemaker and AWS S3
+	\item Added AWS Cloudwatch metrics to stateless classification service running on AWS Lambda using boto3, leading to greatly improved application visibility
+
+\end{itemize}
+}
+
+\resumeSubheading{Data Engineer}{Ampt}{August 2021 - October 2022}{Fort Collins, CO}{
+\begin{itemize}
+
+	\item Managed migration from filesystem data storage to MySQL database storage on intermediate data servers, including overhaul of internal web service to accommodate a database backend. Roadmapped the develoment pipeline from initial prototyping to deployment.
+	\item Prototyped, modeled, and implemented new MySQL database schema in collaboration with engineering requirements. Integrated database with existing data pipeline. 
+	\item Built new ETL processes using Python, pandas, and SQLAlchemy.  Sped up ETL pipeline by \textasciitilde500\%, preventing latency and severe server downtime.
+	\item Built REST API interface to MySQL database.
+	\item Prototyped schemaless data storage in MongoDB, using pymongo. % CV-ONLY
+	\item Architected upgraded Python package for custom parsing, allowing for deployment on edge devices. % CV-ONLY
+	\item Created and managed multiple OpenVPN Ubuntu Linux servers hosted on DigitalOcean.
+	\item Designed and implemented SQLite3 database to track OpenVPN metadata. % CV-ONLY
+	\item Developed command-line tool in Bash for the management and automation of deployment of OpenVPN server and Certificate Authority. % CV-ONLY
 \end{itemize}
 }
 
 \resumeSubheading{Data Analyst Intern}{Trinidad Benham}{March 2021 - August 2021}{Remote}{
 \begin{itemize}
 
-\item Led creation of metadata database system for tracking multiple disparate
-	databases and coordinating shared data views in a data warehouse.
-	Created the database design, scripted data insertion, and ensured
-	proper data flow into the metadata database. Coordinated database
-	design and implementation to incorporate multiple database design
-	philosophies across multiple business functions. Scripted associated
-	business logic in Python, designing code and configuration.
-
-\item Scripted views for Snowflake data warehouse in SQL. 
-
-\item Translated SSRS reports from legacy system, managing scripting, driver
-	configuration, and deployment. Used multiple SQL dialects, including:
-	PostgreSQL, MS SQL Server, Snowflake SQL.
+	\item Led creation of metadata database system for tracking multiple disparate databases and coordinating shared data views in a data warehouse.  Created the database design and scripted data insertion with Python.
+	\item Scripted views for Snowflake data warehouse in SQL.
+	\item Translated SSRS reports from legacy system using PostgreSQL, TSQL, Snowflake SQL.
+	\item Managed driver configuration and workflow scripting for SSRS report translation % CV-ONLY
 
 \end{itemize}
 }
@@ -193,99 +174,88 @@ Cumulative GPA: 4.0
 \resumeSubheading{Software Engineering Intern}{Ampt}{May 2020 - March 2021}{Fort Collins, CO}{
 \begin{itemize}
 
-\item Independently developed a Python package using object-oriented design to
-	integrate Pandas functionality with proprietary over-the-air (RF)
-	network protocol. The package increased the speed of data processing by
-	\~40\%. Managed development, versioning, internal documentation, and
-	deployment. 
-
-\item Developed and maintained an interactive graph dashboard for engineering
-	and client use. Integrated the page into a Flask webserver, using
-	Javascript as a frontend.
-
-\item Led initial testing of Zigbee wireless data collection, including
-	research, scripting, and visualization.
+	\item Independently developed a Python package using Pandas to parse a proprietary over-the-air (RF) network protocol. The package increased the speed of data processing by \textasciitilde40\%. Managed development, versioning, documentation, and deployment. 
+	\item Developed and maintained an interactive graph dashboard for engineering and client use. Integrated the page into a Flask webserver, using Javascript as a frontend.
+	\item Led initial testing of Zigbee wireless data collection, including research, scripting, and visualization. % CV-ONLY
 
 \end{itemize}
 }
 
-\resumeSubheading{Teaching Assistant: Discrete Structures}{Colorado State University}{January 2020 - December 2020}{Fort Collins, CO}{
-\begin{itemize}
+\resumeSubheading{Teaching Assistant: Discrete Structures}{Colorado State University}{January 2020 - December 2020}{Fort Collins, CO}{ % CV-ONLY
+\begin{itemize} % CV-ONLY
 
-\item Led two weekly recitations, reinforcing class material.
-	Assisted students both in recitation and online. Graded course
-	materials and exams. 
+\item Led two weekly recitations, reinforcing class material.  Assisted students both in recitation and online. Graded course materials and exams. % CV-ONLY
+\item Class topics included: Integer representations and properties, propositions, predicates, sets, functions, program proofs, induction, counting, complexity, and basic combinatorics. % CV-ONLY
 
-\item Class topics included: Integer representations and properties,
-	propositions, predicates, sets, functions, program proofs, induction,
-	counting, complexity, and basic combinatorics.
+\end{itemize} % CV-ONLY
+} % CV-ONLY
 
-\end{itemize}
-}
+\resumeSubheading{Research Assistant: Microbiology}{Colorado State University}{December 2018 - June 2019}{Fort Collins, CO}{ % CV-ONLY
+\begin{itemize} % CV-ONLY
+	\item Assisted with the execution of immunofluorescence and transfection experiments for kinetochore protein detection. % CV-ONLY
+	\item Performed general lab support and maintained a sterile lab environment. % CV-ONLY
+\end{itemize} % CV-ONLY
+} % CV-ONLY
 
-\resumeSubheading{Research Assistant: Microbiology}{Colorado State University}{January 2020 - December 2020}{Fort Collins, CO}{
-\begin{itemize}
-	\item Assisted with the execution of immunofluorescence and
-		transfection experiments for kinetochore protein detection.
-	\item Performed general lab support and maintained a sterile lab environment.
-\end{itemize}
-}
-
-\resumeSubheading{Martial Arts Instructor}{International Black Belt Academy}{March 2018 - August 2018}{Fort Collins, CO}{
-\begin{itemize}
-	\item Led youth camps, which involved full supervision of large
-		groups of children. Constructed martial arts-based curriculum for children of
-		all ages.
-	\item Led youth karate instruction classes
-	\item Developed curriculum for youth karate instruction at the appropriate level
-	\item Led and assisted with planning and teaching adult karate instruction classes
-	\item Led and assisted with planning and teaching adult kickboxing classes
-	\item Assisted in teaching a women's self defense course
-\end{itemize}
-}
+\resumeSubheading{Martial Arts Instructor}{International Black Belt Academy}{March 2018 - August 2018}{Fort Collins, CO}{ % CV-ONLY
+\begin{itemize} % CV-ONLY
+	\item Led youth camps, which involved full supervision of large % CV-ONLY
+		groups of children. Constructed martial arts-based curriculum for children of % CV-ONLY
+		all ages. % CV-ONLY
+	\item Led youth karate instruction classes % CV-ONLY
+	\item Developed curriculum for youth karate instruction at the appropriate level % CV-ONLY
+	\item Led and assisted with planning and teaching adult karate instruction classes % CV-ONLY
+	\item Led and assisted with planning and teaching adult kickboxing classes % CV-ONLY
+	\item Assisted in teaching a women's self defense course % CV-ONLY
+\end{itemize} % CV-ONLY
+} % CV-ONLY
 
 % \resumeSubheading{Test}{Test}{Test}{Test}
 
 
-\section{Projects}
-
-\section{Leadership Experience}
-
-\resumeSubheading{Financial Officer}{The 4th Paradigm (CSU Data Science Club)}{August 2018 - May 2021}{Fort Collins, CO}{
-\begin{itemize}
-	\item Served on the leadership committee, which directed club vision and goals
-	\item Planned club events, purchased refreshments and materials for club events
-	\item Solicited and secured funding from sources within and beyond the university
-	\item Managed all official financial documentation and disbursement for club events
-\end{itemize}
-}
+\section{Projects} % CV-ONLY
+ % CV-ONLY
+\project{Honors Thesis}{F 2021}{The Relationship Between Financial Stress and Mental Health in the US}\\ % CV-ONLY
+\project{Class Project}{F 2021}{Time-series boostrapping for solar cell output using NREL data}\\ % CV-ONLY
+\project{Capstone Project}{F 2020}{Machine learning for anomaly detection on credit card purchases}\\ % CV-ONLY
+\project{Class Project}{F 2020}{Algae bloom detection with Random Forest}\\ % CV-ONLY
+\project{Honors Presentation}{F 2020}{Isolation Forest with an engineering application}\\ % CV-ONLY
 
 
+\section{Leadership Experience} % CV-ONLY
+ % CV-ONLY
+\resumeSubheading{Financial Officer}{The 4th Paradigm (CSU Data Science Club)}{August 2018 - May 2021}{Fort Collins, CO}{ % CV-ONLY
+\begin{itemize} % CV-ONLY
+	\item Served on the leadership committee, which directed club vision and goals % CV-ONLY
+	\item Planned club events, purchased refreshments and materials for club events % CV-ONLY
+	\item Solicited and secured funding from sources within and beyond the university % CV-ONLY
+	\item Managed all official financial documentation and disbursement for club events % CV-ONLY
+\end{itemize} % CV-ONLY
+} % CV-ONLY
 
-\section{Awards}
 
-\award{Maurice Davies Award}{CSU Statistics Department}{May 2022}{
-	The CSU Statistics department's most prestigious undergraduate award.
-	More information can be found here:
-	https://statistics.colostate.edu/maurice-davies-award/
-}
 
-\award{Dean's List}{CSU College of Natural Sciences}{May 2018, May 2019, May 2021, May 2022}{
-	Member of the CSU Dean's List for every academic year of enrollment.
-}
-
-\award{Robert Zoellner Philosophy Undergraduate Scholarship}{CSU Philosophy Department}{May 2020, May 2021}{
-	Awarded to a full-time or part-time undergraduate student majoring in
-	Philosophy, with good academic standing.
-}
-
-\award{Early Undergraduate Achievement Award}{CSU Statistics Department}{May 2022}{
-	This award is given to a promising student early in their academic career.
-}
-
-\award{University Honors Scholar}{CSU Statistics Department}{August 2018}{
-	Member of the Colorado State University Honors Program.
-}
-
+\section{Awards}  % CV-ONLY
+ % CV-ONLY
+\award{Maurice Davies Award}{CSU Statistics Department}{May 2022}{ % CV-ONLY
+	The CSU Statistics department's most prestigious undergraduate award. More information can be found here: https://statistics.colostate.edu/maurice-davies-award/ % CV-ONLY
+} % CV-ONLY
+ % CV-ONLY
+\award{Dean's List}{CSU College of Natural Sciences}{May 2018, May 2019, May 2021, May 2022}{ % CV-ONLY
+	Member of the CSU Dean's List for every academic year of enrollment. % CV-ONLY
+} % CV-ONLY
+ % CV-ONLY
+\award{Robert Zoellner Philosophy Undergraduate Scholarship}{CSU Philosophy Department}{May 2020, May 2021}{ % CV-ONLY
+	Awarded to a full-time or part-time undergraduate student majoring in Philosophy, with good academic standing. % CV-ONLY
+} % CV-ONLY
+ % CV-ONLY
+\award{Early Undergraduate Achievement Award}{CSU Statistics Department}{May 2022}{ % CV-ONLY
+	This award is given to a promising student early in their academic career. % CV-ONLY
+} % CV-ONLY
+ % CV-ONLY
+\award{University Honors Scholar}{CSU Statistics Department}{August 2018}{ % CV-ONLY
+	Member of the Colorado State University Honors Program. % CV-ONLY
+} % CV-ONLY
+ % CV-ONLY
 
 \end{document}
