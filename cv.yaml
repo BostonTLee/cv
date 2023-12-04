@@ -1,0 +1,145 @@
+profile:
+  name: Boston T. Lee
+  email: boston.lee@gmail.com
+  phone:  (970) 590-8726
+  linkedin: https://www.linkedin.com/in/boston-lee
+  site: bostonlee.com
+
+education:
+  - institution: Colorado State University, Honors Program
+    location: Fort Collins, CO
+    degree: BS Statistics, BA Philosophy
+    gpa: 4.0
+    honors: Summa Cum Laude
+    start_date: 2018-08-01
+    end_date: 2021-12-01
+
+languages:
+  - Python
+  - Terraform
+  - SQL
+  - POSIX Shell
+  - Bash 
+  - Java
+  - Javascript
+  - R
+
+tools:
+  - Git/Github/Bitbucket
+  - Docker
+  - Kubernetes
+  - AWS Services
+  - Linux
+  - Unix Utilities
+  - Snowflake
+
+
+work:
+  - title: Data Engineer
+    employer: Proofpoint
+    location: Remote
+    start_date: 2022-10-31
+    description:
+      - content: Developed data ingestion microservice using FastAPI, AWS S3, and AWS SNS
+      - content: Developed microservice to integrate a Sagemaker model with a larger job processing framework
+      - content: Architected internal package to process JSON payloads to machine learning inputs, using Pydantic
+      - content: Prototyped XGBoost-based classification model for classifying highly nested JSON payloads
+      - content: Maintained statistical machine learning model in production, managing model bug fixes, retraining, and deployment with AWS Sagemaker and AWS S3
+      - content: Added AWS Cloudwatch metrics to stateless classification service running on AWS Lambda using boto3, leading to greatly improved application visibility
+
+  - title: Data Engineer
+    employer: Ampt
+    location: Fort Collins, CO
+    start_date: 2021-08-10
+    end_date: 2022-10-10
+    description:
+      - content: Managed migration from filesystem data storage to MySQL database storage on intermediate data servers, including overhaul of internal web service to accommodate a database backend. Roadmapped the develoment pipeline from initial prototyping to deployment.
+      - content: Prototyped, modeled, and implemented new MySQL database schema in collaboration with engineering requirements. Integrated database with existing data pipeline. 
+      - content: Built new ETL processes using Python, pandas, and SQLAlchemy.  Sped up ETL pipeline by ~500%, preventing latency and severe server downtime.
+      - content: Built REST API interface to MySQL database.
+      - content: Created and managed multiple OpenVPN Ubuntu Linux servers hosted on DigitalOcean.
+
+  - title: Data Analyst Intern
+    employer: Trinidad Benham
+    location: Remote
+    start_date: 2021-03-01
+    end_date: 2021-08-01
+    description:
+      - content: Led creation of metadata database system for tracking multiple disparate databases and coordinating shared data views in a data warehouse.  Created the database design and scripted data insertion with Python.
+      - content: Scripted views for Snowflake data warehouse in SQL.
+      - content: Translated SSRS reports from legacy system using PostgreSQL, TSQL, Snowflake SQL.
+
+  - title: Software Engineering Intern
+    employer: Ampt
+    location: Fort Collins, CO
+    start_date: 2020-05-01
+    end_date: 2021-03-01
+    description:
+      - content: Independently developed a Python package integrating Pandas functionality with proprietary over-the-air (RF) network protocol. The package increased the speed of data processing by more than 40%. Managed development, versioning, internal documentation, and deployment.
+      - content: Developed and maintained an interactive plotly.js web graph dashboard for engineering and client use on a Flask webserver.
+      - content: Led initial testing of Zigbee wireless data collection, including research, scripting, and visualization.
+
+
+  - title: Undegraduate Teaching Assistant -- Discrete Structures
+    employer: Colorado State University
+    location: Fort Collins, CO
+    start_date: 2020-01-01
+    stop_date: 2020-12-01
+    description:
+      - content: Led two weekly recitations to reinforce class material. Assisted students both in recitation and online.
+      - content: Graded course materials and exams.
+      - content: "Class topics included: Integer representations and properties, propositions, predicates, sets, functions, program proofs, induction, counting, complexity, and basic combinatorics."
+
+  - title: Undergraduate Research Assistant (Microbiology)
+    employer: Colorado State University
+    location: Fort Collins, CO
+    start_date: 2018-12-01
+    stop_date: 2019-06-01
+    description:
+      - content: Assisted with the execution of immunofluorescence and transfection experiments for kinetochore protein detection.
+      - content: Performed general lab support and maintained a sterile lab environment.
+
+leadership:
+  - title: Lead Financial Officer
+    entity: "The 4th Paradigm: Data Science Club at CSU"
+    location: Fort Collins, CO
+    start_date: 2018-09-01
+    end_date: 2021-03-01
+    description:
+    - Led efforts to get funding, assisted in club development, and processed all purchases.
+
+awards:
+  - title: Summa Cum Laude Honors Distinction
+    dates:
+    - 2022-01-01
+    awarder: CSU College of Natural Sciences
+    summary: Graduated in the top 1% of my graduating class in the College of Natural Sciences.
+  - title: Summa Cum Laude Honors Distinction
+    dates:
+    - 2022-01-01
+    awarder: CSU College of Liberal Arts
+    summary: Graduated in the top 1% of my graduating class in the College of Liberal Arts
+  - title: College of Natural Sciences Dean's List
+    dates:
+    - 2018-01-01
+    - 2019-01-01
+    - 2021-01-01
+    - 2022-01-01
+    awarder: CSU College of Natural Sciences
+    summary: An award for students with an exemplary GPA
+  - title: Maurice Davies Award
+    dates: 
+      - 2022-01-01
+    awarder: CSU Statistics Department
+    summary: "The CSU Statistics department's most prestigious undergraduate award. More information can be found here: https://statistics.colostate.edu/maurice-davies-award/."
+  - title: Robert Zoellner Philosophy Undergraduate Scholarship
+    dates: 
+      - 2020-01-01
+      - 2021-01-01
+    awarder: CSU Philosophy Department
+    summary: Awarded to a full-time or part-time undergraduate student majoring in Philosophy, with good academic standing.
+  - title: Early Undergraduate Achievement Award
+    dates: 
+      - 2020-01-01
+    awarder: CSU Statistics Department
+    summary: This award is given to a promising student early in their academic career.
