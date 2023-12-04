@@ -39,52 +39,93 @@ work:
     employer: Proofpoint
     location: Remote
     start_date: 2022-10-31
+    level: full time
     description:
+      - content: Prototyped use of multiple vector databases and documented tradeoffs for each technology for evaluation
+        meta:
+          impact: low
       - content: Developed data ingestion microservice using FastAPI, AWS S3, and AWS SNS
+        meta:
+          impact: high
       - content: Developed microservice to integrate a Sagemaker model with a larger job processing framework
+        meta:
+          impact: high
       - content: Architected internal package to process JSON payloads to machine learning inputs, using Pydantic
+        meta:
+          impact: low
       - content: Prototyped XGBoost-based classification model for classifying highly nested JSON payloads
+        meta:
+          impact: medium
       - content: Maintained statistical machine learning model in production, managing model bug fixes, retraining, and deployment with AWS Sagemaker and AWS S3
+        meta:
+          impact: high
       - content: Added AWS Cloudwatch metrics to stateless classification service running on AWS Lambda using boto3, leading to greatly improved application visibility
+        meta:
+          impact: medium
 
   - title: Data Engineer
     employer: Ampt
     location: Fort Collins, CO
     start_date: 2021-08-10
     end_date: 2022-10-10
+    level: full time
     description:
       - content: Managed migration from filesystem data storage to MySQL database storage on intermediate data servers, including overhaul of internal web service to accommodate a database backend. Roadmapped the develoment pipeline from initial prototyping to deployment.
+        meta:
+          impact: high
       - content: Prototyped, modeled, and implemented new MySQL database schema in collaboration with engineering requirements. Integrated database with existing data pipeline. 
+        meta:
+          impact: high
       - content: Built new ETL processes using Python, pandas, and SQLAlchemy.  Sped up ETL pipeline by ~500%, preventing latency and severe server downtime.
+        meta:
+          impact: high
       - content: Built REST API interface to MySQL database.
+        meta:
+          impact: high
       - content: Created and managed multiple OpenVPN Ubuntu Linux servers hosted on DigitalOcean.
+        meta:
+          impact: medium
 
   - title: Data Analyst Intern
     employer: Trinidad Benham
     location: Remote
     start_date: 2021-03-01
     end_date: 2021-08-01
+    level: internship
     description:
       - content: Led creation of metadata database system for tracking multiple disparate databases and coordinating shared data views in a data warehouse.  Created the database design and scripted data insertion with Python.
+        meta:
+          impact: medium
       - content: Scripted views for Snowflake data warehouse in SQL.
+        meta:
+          impact: low
       - content: Translated SSRS reports from legacy system using PostgreSQL, TSQL, Snowflake SQL.
+        meta:
+          impact: low
 
   - title: Software Engineering Intern
     employer: Ampt
     location: Fort Collins, CO
     start_date: 2020-05-01
     end_date: 2021-03-01
+    level: internship
     description:
       - content: Independently developed a Python package integrating Pandas functionality with proprietary over-the-air (RF) network protocol. The package increased the speed of data processing by more than 40%. Managed development, versioning, internal documentation, and deployment.
+        meta:
+          impact: high
       - content: Developed and maintained an interactive plotly.js web graph dashboard for engineering and client use on a Flask webserver.
+        meta:
+          impact: medium
       - content: Led initial testing of Zigbee wireless data collection, including research, scripting, and visualization.
-
+        meta:
+          impact: low
 
   - title: Undegraduate Teaching Assistant -- Discrete Structures
     employer: Colorado State University
     location: Fort Collins, CO
     start_date: 2020-01-01
-    stop_date: 2020-12-01
+    end_date: 2020-12-01
+    level: teaching assistant
     description:
       - content: Led two weekly recitations to reinforce class material. Assisted students both in recitation and online.
       - content: Graded course materials and exams.
@@ -94,7 +135,8 @@ work:
     employer: Colorado State University
     location: Fort Collins, CO
     start_date: 2018-12-01
-    stop_date: 2019-06-01
+    end_date: 2019-06-01
+    level: research assistant
     description:
       - content: Assisted with the execution of immunofluorescence and transfection experiments for kinetochore protein detection.
       - content: Performed general lab support and maintained a sterile lab environment.
