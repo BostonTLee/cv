@@ -1,0 +1,1 @@
+.work |= map(select(.level == "full time" or .level == "internship"))
