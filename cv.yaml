@@ -35,21 +35,50 @@ tools:
 
 
 work:
-  - title: Data Engineer
+  - title: Software Engineer
     employer: Proofpoint
     location: Remote
     start_date: 2022-10-31
     level: full time
     description:
+      - content: Served as project lead on development of internal-facing email clustering tool. Led development, designed architecture, and managed stakeholder interaction.
+        meta:
+          impact: high
+      - content: Prototyped LLM-backed phishing simulation content classifier, which would allow automated tagging of large content library for customer use.
+        meta:
+          impact: low
+      - content: Served critical role in deploying first LLM-backed application for PSAT group to dev, helping demonstrate company's implementation of generative AI.
+        meta:
+          impact: low
+      - content: Served as lead in company early-career professionals group. Planned and hosted events with executive staff and speakers.
+        meta:
+          impact: low
+      - content: Served on organization quality and standards committee. Helped drive implementation of automated tests and code standards.
+        meta:
+          impact: low
+      - content: Rearchitected ML microservice to use stateless architecture. Contributed key ideas to improved architectural design, allowing updated training data to be added with zero downtime and model architecture to be updated with no database migrations or retraining.
+        meta:
+          impact: high
+      - content: Rearchitected ML microservice to use Postgres and SQLAlchemy. Successfully implemented a prototype system using alembic and pgvector.
+        meta:
+          impact: low
+          notes:
+            - This rearchitecture was abandoned in favor of a stateless architecture
       - content: Prototyped use of multiple vector databases and documented tradeoffs for each technology for evaluation
         meta:
           impact: low
-      - content: Developed data ingestion microservice using FastAPI, AWS S3, and AWS SNS
+          notes:
+            - This work did not lead to anything concrete, except for a POC on FORM
+      - content: Developed one-shot training data ingestion microservice using FastAPI, AWS S3, and AWS SNS.
         meta:
           impact: high
+          notes:
+            - This development was eventually superceded by the above stateless rearchitecture
       - content: Developed microservice to integrate a Sagemaker model with a larger job processing framework
         meta:
           impact: high
+          notes:
+            - This development was eventually superceded by the above stateless rearchitecture
       - content: Architected internal package to process JSON payloads to machine learning inputs, using Pydantic
         meta:
           impact: low
@@ -70,7 +99,7 @@ work:
     end_date: 2022-10-10
     level: full time
     description:
-      - content: Managed migration from filesystem data storage to MySQL database storage on intermediate data servers, including overhaul of internal web service to accommodate a database backend. Roadmapped the develoment pipeline from initial prototyping to deployment.
+      - content: Managed migration from filesystem data storage to MySQL database storage on intermediate data servers, including overhaul of internal web service to accommodate a database backend. Roadmapped the development pipeline from initial prototyping to deployment.
         meta:
           impact: high
       - content: Prototyped, modeled, and implemented new MySQL database schema in collaboration with engineering requirements. Integrated database with existing data pipeline. 
