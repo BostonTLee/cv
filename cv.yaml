@@ -43,9 +43,6 @@ work:
       - content: Set up observability for Azure-deployed system of web services on K8S. Created dashboards, implemented OTEL metrics, set up OTEL collector for logs, created alarms in Azure monitor with Pagerduty integration.
         meta:
           impact: medium
-      - content: Served as Chair for Emerging Professionals group. Set group direction, solicited internal and external speakers, organized meetings, and appropriated funds for group use.
-        meta:
-          impact: medium
       - content: "Maintained agentic memory API running on AKS in Azure. Responsible for all aspects of the application: CI/CD through Azure Dev Ops, automated testing, interface evolution (API versioning, schema evolution), stakeholder communication."
         meta:
           impact: medium
@@ -199,6 +196,13 @@ work:
       - content: Performed general lab support and maintained a sterile lab environment.
 
 leadership:
+  - title: Chair, Lead
+    entity: "Emerging Professionals at Proofpoint"
+    location: Remote
+    start_date: 2018-09-01
+    end_date: 2021-03-01
+    description:
+      - Set group direction, solicited internal and external speakers, organized meetings, and appropriated funds for group use.
   - title: Lead Financial Officer
     entity: "The 4th Paradigm: Data Science Club at CSU"
     location: Fort Collins, CO
