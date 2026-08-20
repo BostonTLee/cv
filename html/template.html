@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curriculum vitae for {{ cv.profile.name }}">
+  <title>{{ cv.profile.name }} | CV</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --navy: #1f4e79;
+      --muted: #555;
+      --rule: #333;
+      color: #111;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 2.5rem 3rem;
+    }
+
+    a {
+      color: var(--navy);
+      overflow-wrap: anywhere;
+    }
+
+    article > header {
+      margin-bottom: 1.5rem;
+    }
+
+    article > header nav {
+      margin-bottom: 1rem;
+    }
+
+    article > header h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    section {
+      margin-top: 1.1rem;
+    }
+
+    section h2 {
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.65rem;
+      padding-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    .entry {
+      margin: 0 0 0.9rem;
+    }
+
+    .entry-heading {
+      align-items: start;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr auto;
+      margin-bottom: 0.25rem;
+    }
+
+    .entry-main,
+    .entry-side {
+      font-weight: 700;
+    }
+
+    .entry-side {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .entry-side .location {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      padding-left: 0.15rem;
+    }
+
+    .skills {
+      display: grid;
+      gap: 0.5rem 0.75rem;
+      grid-template-columns: auto 1fr;
+    }
+
+    .skills strong {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      .entry-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-side {
+        text-align: left;
+        white-space: normal;
+      }
+    }
+
+    @page {
+      margin: 0.45in 0.85in;
+      size: letter;
+    }
+
+    @media print {
+      body {
+        max-width: none;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <nav><a href="/">Home</a></nav>
+        <h1>{{ cv.profile.name }}</h1>
+      </header>
+
+  {% if cv.work %}
+  <section aria-labelledby="employment-heading">
+    <h2 id="employment-heading">Employment</h2>
+    {% for job in cv.work %}
+    <article class="entry">
+      <div class="entry-heading">
+        <div class="entry-main">{{ job.title }}<br>{{ job.employer }}</div>
+        <div class="entry-side">
+          {{ date_range(job.start_date, job.get("end_date")) }}<br>
+          <span class="location">{{ job.location }}</span>
+        </div>
+      </div>
+      <ul>
+        {% for item in job.description %}
+        <li>{{ item | description_content }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if cv.leadership %}
+  <section aria-labelledby="leadership-heading">
+    <h2 id="leadership-heading">Leadership</h2>
+    {% for role in cv.leadership %}
+    <article class="entry">
+      <div class="entry-heading">
+        <div class="entry-main">{{ role.title }}<br>{{ role.entity }}</div>
+        <div class="entry-side">
+          {{ date_range(role.start_date, role.get("end_date")) }}<br>
+          <span class="location">{{ role.location }}</span>
+        </div>
+      </div>
+      <ul>
+        {% for item in role.description %}
+        <li>{{ item | description_content }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if cv.education %}
+  <section aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2>
+    {% for school in cv.education %}
+    <article class="entry">
+      <div class="entry-heading">
+        <div class="entry-main">
+          {{ school.institution }}<br>
+          {{ school.degree }} -- GPA: {{ school.gpa }}{% if school.get("honors") %}, <em>{{ school.honors }}</em>{% endif %}
+        </div>
+        <div class="entry-side">
+          {{ date_range(school.start_date, school.end_date) }}<br>
+          <span class="location">{{ school.location }}</span>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if cv.awards %}
+  <section aria-labelledby="awards-heading">
+    <h2 id="awards-heading">Awards</h2>
+    {% for award in cv.awards %}
+    <article class="entry">
+      <div class="entry-heading">
+        <div class="entry-main">{{ award.title }}<br>{{ award.awarder }}</div>
+        <div class="entry-side">
+          {% for award_date in award.dates %}{{ award_date | date_label }}{% if not loop.last %}, {% endif %}{% endfor %}
+        </div>
+      </div>
+      <ul>
+        <li>{{ award.summary }}</li>
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if cv.languages or cv.tools %}
+  <section aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Skills</h2>
+    <div class="skills">
+      {% if cv.languages %}<strong>Languages:</strong><span>{{ cv.languages | join(", ") }}</span>{% endif %}
+      {% if cv.tools %}<strong>Tools:</strong><span>{{ cv.tools | join(", ") }}</span>{% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+    </article>
+  </main>
+ </body>
+</html>
